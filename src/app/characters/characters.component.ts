@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CharactersService} from '../characters/characters.service';
-import { CommonModule} from '@angular/common';
+import { CharactersService } from '../characters/characters.service';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { race } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -10,7 +11,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
-export class CharactersComponent  implements OnInit{
+export class CharactersComponent implements OnInit {
 
   characters: any[] = [];
 
@@ -18,19 +19,22 @@ export class CharactersComponent  implements OnInit{
 
   filtro: any;
 
-  constructor(private servicio: CharactersService, private fb: FormBuilder){
+  constructor(private servicio: CharactersService, private fb: FormBuilder) {
     this.filtro = this.fb.group({
-      limit:['', [Validators.max(60)]],
-    affiliation: ['Z Fighter']
+      limit: ['5', [Validators.max(60)]],
+      // gender: ['Male'],
+      affiliation: ['Z Fighter'],
+      // race: ['Saiyan']
+
     })
   }
   ngOnInit(): void {
     this.cargardatos();
   }
-  cargardatos(){
-    this.servicio.obtenerdatos(this.filtro.value).subscribe((res: any) => {  
+  cargardatos() {
+    this.servicio.obtenerdatos(this.filtro.value).subscribe((res: any) => {
       this.characters = res;
-      })
+    })
   }
 
 
@@ -38,21 +42,21 @@ export class CharactersComponent  implements OnInit{
     console.log(this.filtro.value);
     this.cargardatos();
     this.enviar()
-    }
+  }
 
-    enviar(){
-      this.servicio.enviardatos(this.filtro.value).subscribe((rest: any) => {
-        console.log(rest);
-      });
-    }
+  enviar() {
+    this.servicio.enviardatos(this.filtro.value).subscribe((rest: any) => {
+      console.log(rest);
+    });
+  }
 
-     mostrarPersonaje(id: number){
-     this.servicio.obtenerPersonaje(id).subscribe((res: any) => {
+  mostrarPersonaje(id: number) {
+    this.servicio.obtenerPersonaje(id).subscribe((res: any) => {
       console.log(res);
-      });
-      // this.servicio.actualizarPersonaje(this.filtro.value , id).subscribe((res: any) => {
-      //   console.log(res);
-      // });
-    }
+    });
+  // this.servicio.actualizarPersonaje(this.filtro.value , id).subscribe((res: any) => {
+  //    console.log(res);
+  //  });
+  }
 
- }
+}

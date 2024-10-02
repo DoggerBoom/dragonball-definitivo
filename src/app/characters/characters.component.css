@@ -3,8 +3,9 @@
   .card{
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
-  }
+    gap: 10rem;
+    justify-content: center;
+ }
 
   .card-bg {
     background-image:url(https://web.dragonball-api.com/images-compress/89980.webp);
@@ -21,10 +22,10 @@
     position: relative;
     background-color: #404544;
     text-align: center;  
-    }
+    line-height: 160%;
+  }
 
-    .card-image{
-      
+    .card-image{   
     border-radius: 1rem;
     background-size: cover; 
     height: 100%;
@@ -32,10 +33,13 @@
     max-height: 400px;
     top: -20px;
     transition: .4s;
-   
-    }
-
+    cursor: pointer;
+  }
 
     .card-image:hover{
       transform: scale(1.2);
-    }
+  }
+
+  .texto {
+    color: white;
+  }

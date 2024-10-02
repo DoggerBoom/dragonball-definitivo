@@ -1,45 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 .root {
-    background-color: black;
-    }
+  background-color: black;
+}
 
 
 
 
 body {
-    background-color: #1c2222;
-    }
+  background-color: #1c2222;
+}
 
 
 
 
-    h1 { 
-        margin-left: 750px;
-        color: #ebc800;
-        font-family: tahoma;
-        font-weight: 900;
-    
-    }
+h1 {
+  margin-left: 750px;
+  color: #ebc800;
+  font-weight: 900;
 
+}
 
+span {
+  color: #ebc800;
+  font-weight: bolder;
+  font-size: large;
+  font-family: tahoma;
+}
 
- 
+h2 {
+  font-weight: bolder;
+  color: white;
+  font-family: tahoma;
+}
 
-  span {
-    color: #ebc800;
-    font-weight: bolder;
-    font-size: large;
-    font-family: tahoma;
-  }
-
-  h2 {
-    font-weight: bolder;
-    color: white;
-    font-family: tahoma;
-  }
-
- .text {
-    color: white;
- }
-  

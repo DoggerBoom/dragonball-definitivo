@@ -21,7 +21,7 @@ export class CharactersService {
     return this.http.get(`https://dragonball-api.com/api/characters/${id}`);
   }
 
-  actualizarPersonaje(data: any, id: any): Observable<any>{
+   actualizarPersonaje(data: any, id: any): Observable<any>{
     return this.http.put(`https://dragonball-api.com/api/characters/${id}`, data);
 
   }
