@@ -15,26 +15,23 @@
   }
 
     .card-bottom {
-        /* margin-top: -1.5rem; */
-         /* border: 2px solid #F0F0F0; */
-        width: 17rem;
-        /* box-shadow: 0.5rem 0.5rem 0.5rem 0 rgba(242,242,242,1); */
-        border-radius: 1rem;
-        height: 100%;
-      position: relative;
+    width: 17rem;
+    border-radius: 1rem;
+    height: 100%;
+    position: relative;
     background-color: #404544;
     text-align: center;  
     }
 
     .card-image{
       
-      border-radius: 1rem;
-      background-size: cover; 
-      height: 100%;
-      max-width: 400px;
-      max-height: 400px;
-      top: -20px;
-      transition: .4s;
+    border-radius: 1rem;
+    background-size: cover; 
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    top: -20px;
+    transition: .4s;
    
     }
 
