@@ -1,0 +1,58 @@
+<br><br><br><br>
+<form [formGroup]="filtro">
+    <button (click)="filtrar()">Filtro de Personajes</button><br>
+    <input type="text" formControlName="affiliation" placeholder="Afiliación"><br>
+    <input type="number" formControlName="limit" placeholder="Limite">
+</form>
+
+<br>
+
+<div>
+
+  <div>
+    <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" style="width: 900px; flex-direction: column; margin-left: 500px;" class="">
+    <h1>The Dragon Ball API</h1>
+  </div>
+    
+  <div class="card">
+      <article *ngFor="let character of characters">
+  <div 
+  (click)="mostrarPersonaje(character.id)" style="color: white;"
+  >
+  </div>
+        <div class="card-bottom">
+          <div class="card-bg">
+            <img class="card-image" [src]="character.image" alt="">
+          </div>
+            <h2>{{character.name}}</h2>
+              <span>{{character.race}} - {{character.gender}}</span>
+               
+                  <div class="text">
+                     Base KI
+                  </div>
+                     
+                    <span>
+                        {{character.ki}}
+                    </span>
+                        
+                      <div class="text">
+                        Total KI
+                      </div>
+                      
+                      <span>
+                        {{character.maxKi}}
+                      </span>
+                      
+                         
+                         
+                            <div class="text"> 
+                              Afiliation 
+                            </div>
+                           
+                            <span>
+                              {{character.affiliation}}
+                            </span>
+                      </div>
+                </article>
+          </div>
+    </div>
