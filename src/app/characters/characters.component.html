@@ -1,12 +1,26 @@
 <br><br><br><br>
 <form [formGroup]="filtro">
-  <input type="text" formControlName="affiliation" placeholder="Afiliación"><br>
+  <select formControlName="affiliation" placeholder="Afiliación"><br>
+    <option value="All">--</option>
+    <option value="Z Fighter">Z Fighter</option>
+    <option value="Red Ribbon Army">Red Ribbon Army</option>
+    <option value="Namekian Warrior">Namekian Warrior</option>
+    <option value="Freelancer">Freelancer</option>
+    <option value="Army of Frieza">Army of Frieza</option>
+    <option value="Pride Troopers">Pride Troopers</option>
+    <option value="Assistant of Vermoud">Assistant of Vermoud</option>
+    <option value="Assistant of Beerus">Assistant of Beerus</option>
+    <option value="Villain">Villain</option>
+    <option value="Other">Other</option>
+  </select>
+  <br>
   <!-- <input type="text" formControlName="gender" placeholder="Genero"><br>
-  <input type="text" formControlName="race" placeholder="Raza"><br>
-  <input type="number" formControlName="limit" placeholder="Limite"><br> -->
-  <button (click)="filtrar()">Filtro de Personajes</button>
-</form>
+  <input type="text" formControlName="race" placeholder="Raza"><br> -->
+  <input type="number" formControlName="limit" placeholder="Limite"><br>
 
+</form>
+<br>
+<button (click)="filtrar()">Filtro de Personajes</button>
 <br>
 
 <div>
@@ -16,45 +30,50 @@
       style="width: 900px; flex-direction: column; margin-left: 500px;" class="">
     <h1>The Dragon Ball API</h1>
   </div>
-
+  <div class="pages">
+    <a class="pages" href="http://localhost:4200/characters">Personajes </a>
+    /
+    <a class="pages" href="http://localhost:4200/planets"> Planetas</a>
+    <br><br><br><br>
+  </div>
   <div class="card">
     <article *ngFor="let character of characters">
       <div (click)="mostrarPersonaje(character.id)" style="color: white;">
-    
-      <div class="card-bottom">
-        <div class="card-bg">
-          <img class="card-image" [src]="character.image" alt="">
+
+        <div class="card-bottom">
+          <div class="card-bg">
+            <img class="card-image" [src]="character.image" alt="">
+          </div>
+
+          <h2>{{character.name}}</h2>
+          <span>{{character.race}} - {{character.gender}}</span>
+
+          <div class="texto">
+            Base KI
+          </div>
+
+          <span>
+            {{character.ki}}
+          </span>
+
+          <div class="texto">
+            Total KI
+          </div>
+
+          <span>
+            {{character.maxKi}}
+          </span>
+
+
+
+          <div class="texto">
+            Afiliation
+          </div>
+
+          <span>
+            {{character.affiliation}}
+          </span>
         </div>
-     
-        <h2>{{character.name}}</h2>
-        <span>{{character.race}} - {{character.gender}}</span>
-
-        <div class="texto">
-          Base KI
-        </div>
-
-        <span>
-          {{character.ki}}
-        </span>
-
-        <div class="texto">
-          Total KI
-        </div>
-
-        <span>
-          {{character.maxKi}}
-        </span>
-
-
-
-        <div class="texto">
-          Afiliation
-        </div>
-
-        <span>
-          {{character.affiliation}}
-        </span>
-      </div>
       </div>
     </article>
   </div>

@@ -21,9 +21,9 @@ export class CharactersComponent implements OnInit {
 
   constructor(private servicio: CharactersService, private fb: FormBuilder) {
     this.filtro = this.fb.group({
-      limit: ['5', [Validators.max(60)]],
-      // gender: ['Male'],
-      affiliation: ['Z Fighter'],
+       limit: ['1'],
+      // // gender: ['Male'],
+       affiliation: ['Z Fighter'],
       // race: ['Saiyan']
 
     })
@@ -41,12 +41,12 @@ export class CharactersComponent implements OnInit {
   filtrar() {
     console.log(this.filtro.value);
     this.cargardatos();
-    this.enviar()
+    this.enviar();
   }
 
   enviar() {
-    this.servicio.enviardatos(this.filtro.value).subscribe((rest: any) => {
-      console.log(rest);
+    this.servicio.enviardatos(this.filtro.value).subscribe((res: any) => {
+      console.log(res);
     });
   }
 

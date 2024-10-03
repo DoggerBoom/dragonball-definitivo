@@ -4,17 +4,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CharactersComponent } from "./characters/characters.component";
 import { HeaderComponent } from "./header/header.component";
+import { PlanetsComponent } from "./planets/planets.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, HttpClientModule, CharactersComponent, HeaderComponent],
+  imports: [RouterOutlet, CommonModule, HttpClientModule, CharactersComponent, HeaderComponent, PlanetsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
 
-  private readonly baseURL='http://localhost:4200/guerreros'
+  private readonly baseURL='http://localhost:4200/characters'
 
   constructor(
     private readonly http: HttpClient

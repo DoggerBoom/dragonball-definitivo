@@ -9,10 +9,9 @@ body {
 }
 
 h1 {
-  margin-left: 750px;
   color: #ebc800;
   font-weight: 900;
-
+  text-align: center;
 }
 
 span {
@@ -28,3 +27,76 @@ h2 {
   font-family: tahoma;
 }
 
+select:hover {
+  box-shadow: 0 0 4px rgb(229, 220, 127);
+  transform: scale(1.2);
+}
+
+select {
+  border-radius: 1rem;
+  transition: .4s;
+  background-image: url(https://web.dragonball-api.com/images-compress/89980.webp);
+  background-size: cover;
+  cursor: pointer;
+  transition: .4s;
+  width: 100px;
+}
+
+button {
+  border-radius: 1rem;
+}
+
+input {
+  border-radius: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rem;
+  justify-content: center;
+}
+
+.card-bottom {
+  width: 17rem;
+  border-radius: 1rem;
+  height: 100%;
+  position: relative;
+  background-color: #404544;
+  text-align: center;
+  line-height: 160%;
+}
+
+.card-image {
+  border-radius: 1rem;
+  background-size: cover;
+  height: 100%;
+  max-width: 400px;
+  max-height: 400px;
+  top: -20px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.card-image:hover {
+  transform: scale(1.2);
+}
+
+.texto {
+  color: white;
+}
+
+.card-bg-p {
+  background-image: url(https://web.dragonball-api.com/images-compress/89980.webp);
+  border-radius: 1rem;
+  background-size: cover;
+  width: auto;
+  height: 153px;
+
+}
+
+.pages {
+  text-align: center;
+  color: #ebc800;
+  font-weight: 900;
+}

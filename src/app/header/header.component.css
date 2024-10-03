@@ -1,19 +1,18 @@
-
-header{
-color: rgb(97, 97, 97);
-border-radius: 4px;
-box-shadow: none;
-position: fixed; 
- padding-left: 24px; 
- padding-right: 24px;
-top: 0px; 
-height: 60px; 
-width: 100%; 
- z-index: 5; 
- background-color: white; 
+header {
+    color: rgb(97, 97, 97);
+    border-radius: 7px;
+    box-shadow: none;
+    position: fixed;
+    padding-left: 24px;
+    padding-right: 24px;
+    top: 0px;
+    height: 60px;
+    width: 96.5%;
+    z-index: 5;
+    background-color: white;
 
 }
 
-.head{
+.head {
     height: 100%;
 }

@@ -1,1 +1,39 @@
-<p>planets works!</p>
+<br><br><br><br>
+<p class="texto">Destruido:</p>
+<form [formGroup]="filtro">
+    <select formControlName="isDestroyed" placeholder="Destruido"><br>
+        <option value="All">--</option>
+        <option value="true">Si</option>
+        <option value="false">No</option>
+    </select>
+
+</form>
+<br>
+<button (click)="filtrar()">Filtro de Planetas</button>
+<div>
+    <div>
+        <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt=""
+            style="width: 900px; flex-direction: column; margin-left: 500px;" class="">
+        <h1>The Dragon Ball API</h1>
+    </div>
+    <div class="pages">
+        <a class="pages" href="http://localhost:4200/characters">Personajes </a>
+        /
+        <a class="pages" href="http://localhost:4200/planets"> Planetas</a>
+        <br><br><br><br>
+    <div class="card">
+        <article *ngFor="let planet of planets">
+            <div (click)="mostrarPlaneta(planet.id)" style="color: white;">
+
+                <div class="card-bottom">
+                    <div class="card-bg-p">
+                        <img class="card-image" [src]="planet.image" alt="">
+                    </div>
+
+                    <h2>{{planet.name}}</h2>
+
+                </div>
+            </div>
+        </article>
+    </div>
+</div>
