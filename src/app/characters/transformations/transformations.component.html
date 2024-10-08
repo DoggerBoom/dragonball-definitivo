@@ -1,0 +1,86 @@
+<br><br><br><br>
+<div class="all">
+    <div class="unify">
+        <div class="image-bg">
+            <img class="image" [src]="character.image" alt="">
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="card-bottom">
+
+
+        <h2 class="title-bg">{{character.name}}</h2>
+
+
+        <div class="texto">
+            Genero:
+        </div>
+
+        <span [ngSwitch]="character.gender">
+            <span *ngSwitchCase="'Male'">Hombre</span>
+            <span *ngSwitchCase="'Female'">Mujer</span>
+            <span *ngSwitchCase="'Unknow'">Desconocido</span>
+            <span *ngSwitchDefault="">{{character.gender}}</span>
+        </span><br>
+
+        <div class="texto">
+            Ki:
+        </div>
+        <span>{{character.ki}}</span>
+        <div class="texto">
+            Ki Maximo:
+        </div>
+
+        <span>{{character.maxKi}}</span>
+
+        <div class="texto">
+            Afiliacion:
+        </div>
+        <span> {{character.affiliation}}</span>
+    </div>
+
+    <div class="card-bottom">
+
+        <h2 class="title-bg">Descripcion:</h2>
+
+        <p class="texto">{{character.description}}</p>
+    </div>
+
+    <span>{{character.originPlanet?.name}}</span>
+    <img [src]= "character.originPlanet?.image">
+</div>
+
+
+
+
+
+<div class="card">
+
+    <div *ngIf="character.transformations[0]">
+
+        <div *ngFor="let transformation of character.transformations">
+
+                    <div class="card-bottom">
+
+                        <div class="image-bg">
+                            <img class="image" [src]="transformation.image">
+                        </div>
+
+
+                        <span>
+                            {{transformation.name}}
+                        </span>
+
+                        <p>
+                            Ki:
+                        </p>
+
+                        <span>
+                            {{transformation.ki}}
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+

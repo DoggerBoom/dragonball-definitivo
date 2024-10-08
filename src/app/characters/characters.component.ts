@@ -3,11 +3,13 @@ import { CharactersService } from '../characters/characters.service';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { race } from 'rxjs';
+import { log } from 'node:console';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './characters.component.html',
   styleUrl: './characters.component.css'
 })
@@ -54,9 +56,9 @@ export class CharactersComponent implements OnInit {
     this.servicio.obtenerPersonaje(id).subscribe((res: any) => {
       console.log(res);
     });
-  // this.servicio.actualizarPersonaje(this.filtro.value , id).subscribe((res: any) => {
-  //    console.log(res);
-  //  });
   }
 
-}
+  
+
+  }
+

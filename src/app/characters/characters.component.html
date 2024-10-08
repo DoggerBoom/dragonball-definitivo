@@ -26,14 +26,13 @@
 <div>
 
   <div>
-    <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt=""
-      style="width: 900px; flex-direction: column; margin-left: 500px;" class="">
+    <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" class="api-img">
     <h1>The Dragon Ball API</h1>
   </div>
   <div class="pages">
-    <a class="pages" href="http://localhost:4200/characters">Personajes </a>
+    <a class="pages" [routerLink]="['/characters']">Personajes</a>
     /
-    <a class="pages" href="http://localhost:4200/planets"> Planetas</a>
+    <a class="pages" [routerLink]="['/planets']">Planetas</a>
     <br><br><br><br>
   </div>
   <div class="card">
@@ -42,14 +41,19 @@
 
         <div class="card-bottom">
           <div class="card-bg">
-            <img class="card-image" [src]="character.image" alt="">
+            <!-- <a [routerLink]="['/transformations', character.id]"> -->
+              <img class="card-image" [src]="character.image" alt="">
+            <!-- </a> -->
           </div>
 
-          <h2>{{character.name}}</h2>
+          <a [routerLink]="['/characters', character.id]">
+            <h2>{{character.name}}</h2>
+          </a>
+
           <span>{{character.race}} - {{character.gender}}</span>
 
           <div class="texto">
-            Base KI
+            Ki:
           </div>
 
           <span>
@@ -57,22 +61,21 @@
           </span>
 
           <div class="texto">
-            Total KI
+            Ki Maximo:
           </div>
 
           <span>
             {{character.maxKi}}
           </span>
 
-
-
           <div class="texto">
-            Afiliation
+            Afiliacion:
           </div>
 
           <span>
             {{character.affiliation}}
           </span>
+
         </div>
       </div>
     </article>

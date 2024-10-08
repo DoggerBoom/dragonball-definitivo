@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class CharactersService {
 
-  constructor(private http: HttpClient) {
-   }
+  constructor(private http: HttpClient) { }
+
    obtenerdatos(filtro: any): Observable<any>{
     return this.http.get(`https://dragonball-api.com/api/characters`, {params: filtro});
    }
@@ -21,8 +21,8 @@ export class CharactersService {
     return this.http.get(`https://dragonball-api.com/api/characters/${id}`);
   }
 
-   actualizarPersonaje(data: any, id: any): Observable<any>{
-    return this.http.put(`https://dragonball-api.com/api/characters/${id}`, data);
+  obtenerTransformaciones(id: any): Observable<any> {
+    return this.http.get(`https://dragonball-api.com/api/transformations/${id}`);
   }
 
 }

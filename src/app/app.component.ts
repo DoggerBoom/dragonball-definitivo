@@ -5,11 +5,12 @@ import { CommonModule } from '@angular/common';
 import { CharactersComponent } from "./characters/characters.component";
 import { HeaderComponent } from "./header/header.component";
 import { PlanetsComponent } from "./planets/planets.component";
+import { TransformationsComponent } from "./characters/transformations/transformations.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, HttpClientModule, CharactersComponent, HeaderComponent, PlanetsComponent],
+  imports: [RouterOutlet, CommonModule, HttpClientModule, CharactersComponent, HeaderComponent, PlanetsComponent, TransformationsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

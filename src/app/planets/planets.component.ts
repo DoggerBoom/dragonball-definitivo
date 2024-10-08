@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { PlanetsService } from './planets.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-planets',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './planets.component.html',
   styleUrl: './planets.component.css'
 })
@@ -15,6 +16,8 @@ export class PlanetsComponent {
   planets: any[] = [];
 
   filtro: any;
+
+  isDesroyed = true;
 
 
   constructor(private servicio: PlanetsService, private fb: FormBuilder) {

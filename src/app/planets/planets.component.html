@@ -13,13 +13,13 @@
 <div>
     <div>
         <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt=""
-            style="width: 900px; flex-direction: column; margin-left: 500px;" class="">
+             class="api-img">
         <h1>The Dragon Ball API</h1>
     </div>
     <div class="pages">
-        <a class="pages" href="http://localhost:4200/characters">Personajes </a>
+        <a class="pages" [routerLink]="['/characters']">Personajes </a>
         /
-        <a class="pages" href="http://localhost:4200/planets"> Planetas</a>
+        <a class="pages" [routerLink]="['/planets']"> Planetas</a>
         <br><br><br><br>
     <div class="card">
         <article *ngFor="let planet of planets">
@@ -28,9 +28,18 @@
                 <div class="card-bottom">
                     <div class="card-bg-p">
                         <img class="card-image" [src]="planet.image" alt="">
+                        
                     </div>
 
                     <h2>{{planet.name}}</h2>
+
+                    <div class="texto">
+                        ¿Esta destruido?
+                    </div>
+
+                    <span>
+                        "{{planet.isDestroyed ? 'Si esta destruido' : 'No Destruido'}}"
+                    </span>
 
                 </div>
             </div>
