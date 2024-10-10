@@ -16,3 +16,10 @@ header {
 .head {
     height: 100%;
 }
+
+.head-text {
+    text-align: center;
+    margin-top: -50px;
+    display: flex;
+    justify-content: center;
+}

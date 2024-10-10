@@ -11,29 +11,13 @@
     background-image:url(https://i.pinimg.com/originals/44/bc/31/44bc313d55b5403c68b32bc7eda09667.jpg);
     border-radius: 1rem;
     background-size:cover;
-    width: auto;
+    width: 320px;
     height: 600px;
 }
 
 .unify{
     max-width: 300px;
     max-height: 400px;
-}
-.all{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-.title-bg{
-    background-image: url(https://web.dragonball-api.com/images-compress/89980.webp);
-    border-radius: 1rem;
-    background-size:cover;
-    width: auto;
-    height: 30px;
-    color: #34567e;
-    font-family: tahoma;
-    font-weight:900;
 }
 
 .card-dw{
@@ -42,4 +26,9 @@
     border-radius: 1rem;
     background-image: url(https://static.vecteezy.com/system/resources/thumbnails/002/375/040/small_2x/modern-white-background-free-vector.jpg);
     background-size: cover;
+}
+
+.transformations{
+    max-width: 300px;
+    max-height: 400px;
 }

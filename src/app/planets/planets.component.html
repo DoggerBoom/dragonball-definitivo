@@ -1,8 +1,8 @@
 <br><br><br><br>
-<p class="texto">Destruido:</p>
+<span class="texto">Destruido:</span>
 <form [formGroup]="filtro">
     <select formControlName="isDestroyed" placeholder="Destruido"><br>
-        <option value="All">--</option>
+        <option value="">Todos</option>
         <option value="true">Si</option>
         <option value="false">No</option>
     </select>
@@ -16,20 +16,18 @@
              class="api-img">
         <h1>The Dragon Ball API</h1>
     </div>
-    <div class="pages">
-        <a class="pages" [routerLink]="['/characters']">Personajes </a>
-        /
-        <a class="pages" [routerLink]="['/planets']"> Planetas</a>
-        <br><br><br><br>
+
     <div class="card">
         <article *ngFor="let planet of planets">
             <div (click)="mostrarPlaneta(planet.id)" style="color: white;">
 
                 <div class="card-bottom">
+
+                    <a [routerLink]="['/planets', planet.id]">
                     <div class="card-bg-p">
-                        <img class="card-image" [src]="planet.image" alt="">
-                        
+                        <img class="card-image" [src]="planet.image" alt="">  
                     </div>
+                    </a>
 
                     <h2>{{planet.name}}</h2>
 
@@ -40,8 +38,8 @@
                     <span>
                         "{{planet.isDestroyed ? 'Si esta destruido' : 'No Destruido'}}"
                     </span>
-
                 </div>
+                
             </div>
         </article>
     </div>

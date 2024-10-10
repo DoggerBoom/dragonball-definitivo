@@ -23,26 +23,22 @@ export class CharactersComponent implements OnInit {
 
   constructor(private servicio: CharactersService, private fb: FormBuilder) {
     this.filtro = this.fb.group({
-       limit: ['1'],
-      // // gender: ['Male'],
-       affiliation: ['Z Fighter'],
-      // race: ['Saiyan']
-
+      limit: ['58'],
+      affiliation: [''],
     })
   }
   ngOnInit(): void {
     this.cargardatos();
   }
+
   cargardatos() {
     this.servicio.obtenerdatos(this.filtro.value).subscribe((res: any) => {
-      this.characters = res;
+      this.characters = this.filtro.value.affiliation? res : res.items;
     })
   }
 
-
   filtrar() {
-    console.log(this.filtro.value);
-    this.cargardatos();
+        this.cargardatos();
     this.enviar();
   }
 
@@ -58,7 +54,5 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  
-
-  }
+}
 

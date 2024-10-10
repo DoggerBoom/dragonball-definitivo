@@ -1,7 +1,7 @@
 <br><br><br><br>
 <form [formGroup]="filtro">
   <select formControlName="affiliation" placeholder="Afiliación"><br>
-    <option value="All">--</option>
+    <option value="">Todos</option>
     <option value="Z Fighter">Z Fighter</option>
     <option value="Red Ribbon Army">Red Ribbon Army</option>
     <option value="Namekian Warrior">Namekian Warrior</option>
@@ -29,26 +29,19 @@
     <img src="https://web.dragonball-api.com/images-compress/logo_dragonballapi.webp" alt="" class="api-img">
     <h1>The Dragon Ball API</h1>
   </div>
-  <div class="pages">
-    <a class="pages" [routerLink]="['/characters']">Personajes</a>
-    /
-    <a class="pages" [routerLink]="['/planets']">Planetas</a>
-    <br><br><br><br>
-  </div>
+
   <div class="card">
     <article *ngFor="let character of characters">
       <div (click)="mostrarPersonaje(character.id)" style="color: white;">
 
         <div class="card-bottom">
-          <div class="card-bg">
-            <!-- <a [routerLink]="['/transformations', character.id]"> -->
-              <img class="card-image" [src]="character.image" alt="">
-            <!-- </a> -->
-          </div>
-
           <a [routerLink]="['/characters', character.id]">
-            <h2>{{character.name}}</h2>
+            <div class="card-bg">
+              <img class="card-image" [src]="character.image" alt="">
+            </div>
           </a>
+
+          <h2>{{character.name}}</h2>
 
           <span>{{character.race}} - {{character.gender}}</span>
 

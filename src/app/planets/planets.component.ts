@@ -17,12 +17,10 @@ export class PlanetsComponent {
 
   filtro: any;
 
-  isDesroyed = true;
-
 
   constructor(private servicio: PlanetsService, private fb: FormBuilder) {
     this.filtro = this.fb.group({
-      isDestroyed: ['--']
+      isDestroyed:[''],
     })
   }
 
@@ -32,7 +30,8 @@ export class PlanetsComponent {
 
   cargardatos() {
     this.servicio.obtenerdatos(this.filtro.value).subscribe((res: any) => {
-      this.planets = res;
+    // this.planets = this.filtro.value.isDestroyed ? res: res.items;
+    this.planets = res;
     })
   }
 
@@ -43,7 +42,6 @@ export class PlanetsComponent {
   }
 
   filtrar() {
-    console.log(this.filtro.value);
     this.cargardatos();
     this.enviar()
   }

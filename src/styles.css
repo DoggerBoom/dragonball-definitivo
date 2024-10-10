@@ -73,7 +73,6 @@ input {
   width: 20rem;
   border-radius: 1rem;
   height: 100%;
-  position: relative;
   background-color: #404544;
   text-align: center;
 }
@@ -115,8 +114,37 @@ input {
   height: 400px;
 }
 
-.pages {
+.title-bg{
+  background-image: url(https://web.dragonball-api.com/images-compress/89980.webp);
+  border-radius: 1rem;
+  background-size:cover;
+  width: auto;
+  height: 30px;
+  color: #34567e;
+  font-family: tahoma;
+  font-weight:900;
   text-align: center;
-  color: #ebc800;
-  font-weight: 900;
+}
+
+.all{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4.5rem;
+}
+
+.image{
+    background-size: cover;
+    height: 100%;
+    max-width: 350px;
+    max-height: 600px;
+    top: -20px;
+    justify-content: center;
+}
+
+.image-bg{
+    background-image:url(https://i.pinimg.com/originals/44/bc/31/44bc313d55b5403c68b32bc7eda09667.jpg);
+    border-radius: 1rem;
+    background-size:cover;
+    width: auto;
+    height: 600px;
 }

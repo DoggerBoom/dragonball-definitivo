@@ -1,0 +1,40 @@
+<br><br><br><br>
+<div class="all">
+    <img class="image" [src]="planet.image">
+
+
+    <div class="card-bottom">
+
+        <h2 class="title-bg">{{planet.name}}</h2>
+
+        <span>{{planet.isDestroyed ? '"Planeta destruido"' : '"Planeta no destruido"'}}</span>
+    </div>
+
+    <div class="card-bottom">
+        <h2 class="title-bg">Descripcion:</h2>
+
+        <div class="texto">{{planet.description}}</div>
+    </div>
+
+</div>
+
+
+<div *ngIf="planet.characters.length > 0">
+    <h2 class="title-bg">Personajes pertenecientes a este planeta:</h2>
+    <div class="all">
+        <div *ngFor="let character of planet.characters">
+
+
+            <div class="card-bottom">
+                <a [routerLink]="['/characters', character.id]">
+                    <div class="card-bg">
+                        <img class="card-image" [src]="character.image">
+                    </div>
+                </a>
+
+
+                <h2>{{character.name}}</h2>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,9 +10,9 @@ export class PlanetsService {
   constructor(private http: HttpClient) {
   }
 
-  obtenerdatos(filtro: any): Observable<any> {
-    return this.http.get(`https://dragonball-api.com/api/planets`, { params: filtro });
-  }
+  obtenerdatos(filtro: any): Observable<any>{
+    return this.http.get(`https://dragonball-api.com/api/planets`, {params: filtro});
+   }
 
   enviardatos(data: any): Observable<any> {
     return this.http.post(`https://dragonball-api.com/api/planets`, data);
